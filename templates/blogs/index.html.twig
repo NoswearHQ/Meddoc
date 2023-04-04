@@ -1,0 +1,1453 @@
+{% extends 'base.html.twig' %}
+{% block title %}{% endblock %}
+{% block body %}
+
+    {% include 'header.html.twig' %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="list-group">
+                    <li class="list-group-item active">Categories</li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('All')">All</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Cardiologie')">Cardiologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Pédiatrique')">Pédiatrique Endocrinologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Dermatologie')">Dermatologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Gastro')">Gastro-entérologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Hépatologie')">Hépatologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Gynécologie')">Gynécologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Obstétrique')">Obstétrique</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Hématologie')">Hématologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Oncologie')">Oncologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Maladie')">Maladie infectieuse</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Médecine')">Médecine interne</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Gériatrie')">Gériatrie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Néphrologie')">Néphrologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Neurologie')">Neurologie Ophtalmologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('ORL')">ORL</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Pédiatrie')">Pédiatrie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Pédiatriemétaboliques')">Pédiatrie métaboliques</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Pneumologie')">Pneumologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Psychiatrie')">Psychiatrie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Réanimation')">Réanimation</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Rhumatologie')">Rhumatologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Urologie')">Urologie</button></li>
+                    <li class="list-group-item"><button class="btn btn-primary" onclick="showDiv('Urgence')">Urgence</button></li>
+
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="col-lg-12 text-center">
+                    <div class="load__more">
+                        {% if app.user %}
+                            <a href="{{ path('app_add_blog') }}" class="primary-btn">Ajouter un article</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div id="All" style="display:block;">
+                <section class="blog spad">
+                    <div class="container">
+                        <div class="row">
+                            {% for d in data %}
+                                <div class="col-lg-12 col-md-6 col-sm-6">
+                                    <div class="blog__item">
+                                        <div class="blog__item__pic">
+                                            <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                        </div>
+                                        <div class="blog__item__text">
+                                            <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                            <ul>
+                                                <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                <li>{{ d.blog.datearticle }}</li>
+                                            </ul>
+                                            <br>
+                                            <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn"><i class="fa fa-info-circle" aria-hidden="true"></i>Voir plus</a>
+                                            {% if app.user %}
+                                                {% if app.user.id== d.user.id  %}
+                                                    <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn" ><i  class="fa fa-gear"></i>Modifier</a>
+                                                    <a href="{{ path('app_delete_blog',{'id':d.blog.id})}}" class="primary-btn" style="color:red"><i class="fa fa-trash-o" ></i>Supprimer</a>
+                                                {% endif %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+                <div id="Cardiologie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Cardiologie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Pédiatrique" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Pédiatrique Endocrinologie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Dermatologie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Dermatologie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Gastro" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Gastro-entérologie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Hépatologie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Hépatologie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Gynécologie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Gynécologie-Obstétrique' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Obstétrique" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Obstétrique' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Hématologie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Hématologie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Oncologie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Oncologie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Maladie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Maladie infectieuse' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Médecine" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Médecine interne' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Gériatrie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Gériatrie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Néphrologie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Néphrologie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Neurologie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Neurologie Ophtalmologie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="ORL" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'ORL' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Pédiatrie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Pédiatrie métaboliques' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Pédiatriemétaboliques" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Pédiatrie métaboliques' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Pneumologie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Pneumologie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Psychiatrie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Psychiatrie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Réanimation" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Réanimation' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Rhumatologie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Rhumatologie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Urologie" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Urologie' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="Urgence" style="display:none;">
+                    <section class="blog spad">
+                        <div class="container">
+                            <div class="row">
+                                {% for d in data  %}
+                                    {% if d.blog.cat == 'Urgence' %}
+                                        <div class="col-lg-12 col-md-6 col-sm-6">
+                                            <div class="blog__item">
+                                                <div class="blog__item__pic">
+                                                    <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
+                                                </div>
+                                                <div class="blog__item__text">
+                                                    <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                                    <ul>
+                                                        <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
+                                                        <li>{{ d.blog.datearticle }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn">Voir plus</a>
+                                                    {% if app.user %}
+                                                        {% if app.user.id== d.user.id  %}
+                                                            <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn">Modifier</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+           </div>
+        </div>
+    </div>
+
+    <script>
+
+        function showDiv(divId) {
+            var div = document.getElementById(divId).id;
+            if (div === "All") {
+                var div1 = document.getElementById(divId);
+                div1.style.display = "block";
+            }
+            if (div === "Cardiologie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "block";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+
+
+
+            }
+            if (div === "Pédiatrique") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "block";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Dermatologie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "block";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Gastro") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "block";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Hépatologie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "block";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Gynécologie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "block";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Obstétrique") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "block";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Hématologie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "block";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Oncologie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "block";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "block";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Maladie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "block";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Médecine") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "block";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Gériatrie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "block";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Néphrologie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "block";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Neurologie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "block";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "ORL") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "block";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Pédiatrie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "block";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Pédiatriemétaboliques") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "block";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Pneumologie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pneumologie.style.display = "block";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Psychiatrie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "block";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";
+            }
+            if (div === "Réanimation") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "block";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";            }
+            if (div === "Rhumatologie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "block";
+                Urologie.style.display = "none";
+                Urgence.style.display = "none";            }
+            if (div === "Urologie") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "block";
+                Urgence.style.display = "none";
+            }
+            if (div === "Urgence") {
+                div1 = document.getElementById(divId);
+                All.style.display = "none";
+                Cardiologie.style.display = "none";
+                Pédiatrique.style.display = "none";
+                Dermatologie.style.display = "none";
+                Gastro.style.display = "none";
+                Hépatologie.style.display = "none";
+                Gynécologie.style.display = "none";
+                Obstétrique.style.display = "none";
+                Hématologie.style.display = "none";
+                Oncologie.style.display = "none";
+                Maladie.style.display = "none";
+                Médecine.style.display = "none";
+                Gériatrie.style.display = "none";
+                Néphrologie.style.display = "none";
+                Neurologie.style.display = "none";
+                ORL.style.display = "none";
+                Pédiatrie.style.display = "none";
+                Pédiatriemétaboliques.style.display = "none";
+                Psychiatrie.style.display = "none";
+                Réanimation.style.display = "none";
+                Rhumatologie.style.display = "none";
+                Urologie.style.display = "none";
+                Urgence.style.display = "block";
+            }
+        }
+    </script>
+    {% include 'footer.html.twig' %}
+
+{% endblock %}

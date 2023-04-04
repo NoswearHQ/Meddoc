@@ -1,0 +1,107 @@
+<div class="offcanvas-menu-overlay"></div>
+<div class="offcanvas-menu-wrapper">
+    <div class="offcanvas__logo">
+        <a href="{{path('app_accueil') }}"><img src="{{ asset('front/mainfront/img/Meddoclogo.png')}}" alt=""></a>
+        {% if app.user %}
+            <a href={{ path('app_logout')}} class="primary-btn">Se Deconnecter</a>
+        {% else %}
+            <a href={{ path('app_login')}} class="primary-btn">Se Connecter</a>
+        {% endif %}
+    </div>
+    <div id="mobile-menu-wrap"></div>
+    <div class="offcanvas__btn">
+
+    </div>
+    <ul class="offcanvas__widget">
+        {% if app.user %}
+        <li>{{ app.user.nom }} {{ app.user.prenom }}  <a href={{ path('app_update_user') }}><i class="fa fa-gear"></i>Profile</a></li>
+        {% if app.user.isVerified==1 %}
+            <li style="color: greenyellow"> Compte activé</li>
+        {% else  %}
+            <li style="color: red">Compte non activé</li>
+            <li >(Verifier votre boite mail)</li>
+        {% endif %}
+        {% endif %}
+
+
+    </ul>
+
+</div>
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            {% if app.user %}
+            <div class="row">
+                <div class="col-lg-8">
+                    <ul class="header__top__left">
+                        <li>
+                                <img src="{{ asset('UsersProfileImgs/' ~ app.user.avatar) }}"  style="width:30px ; border-radius: 50%;">
+                        </li>
+                        <li>{{ app.user.nom }}</li>
+                        <li>{{ app.user.prenom }}</li>
+                        {% if app.user.isVerified==1 %}
+                        <li style="color: greenyellow"> Compte activé</li>
+                        {% else  %}
+                        <li style="color: red">Compte non activé</li>
+                            <li >(Verifier votre boite mail)</li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <div class="header__top__right">
+                        <a href={{ path('app_update_user') }}><i class="fa fa-gear"></i>Profile</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="header__logo">
+                    <a href="{{path('app_accueil') }}"><img src="{{ asset('front/mainfront/img/Meddoclogo.png')}}" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <div class="header__menu__option">
+                    <nav class="header__menu">
+                        <ul>
+                            <li ><a href="{{path('app_accueil') }}">Accueil</a></li>
+                            <li><a href="{{path('app_blogs') }}">Articles</a>
+                                {% if app.user %}
+                            {% if app.user.roles[0]=="ROLE_ADMIN" or  app.user.roles[0]=="ROLE_ROOT" %}
+
+                            <li><a href="{{path('app_user_manager') }}">Gerer les utilisateur</a>
+                            {% endif %}
+                            {% endif %}
+
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__btn">
+                        {% if app.user %}
+                            <a href={{ path('app_logout')}} class="primary-btn">Se Deconnecter</a>
+                            {% else %}
+                                <a href={{ path('app_login')}} class="primary-btn">Se Connecter</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="canvas__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script href="{{ asset('front/mainfront/js/jquery-3.3.1.min.js')}}"></script>
+<script src="{{ asset('front/mainfront/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('front/mainfront/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{ asset('front/mainfront/js/masonry.pkgd.min.js')}}"></script>
+<script src="{{ asset('front/mainfront/js/jquery-ui.min.js')}}"></script>
+<script src="{{ asset('front/mainfront/js/jquery.nice-select.min.js')}}"></script>
+<script src="{{ asset('front/mainfront/js/jquery.slicknav.js')}}"></script>
+<script src="{{ asset('front/mainfront/js/owl.carousel.min.js')}}"></script>
+<script src="{{ asset('front/mainfront/js/main.js')}}"></script>

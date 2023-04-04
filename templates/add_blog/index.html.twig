@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+
+    <section>
+        <div class="contact1">
+            <div class="container-contact1">
+                <div class="contact1-pic js-tilt" data-tilt>
+                    <img src="{{ asset('front/mainfront/img/logoArticle.png')}}" alt="IMG">
+                </div>
+                {{ form_start(BlogForm) }}
+				<span class="contact1-form-title">
+					Ajouter un article
+				</span>
+                {{ form_row(BlogForm.cat) }}
+
+                    <br><br>
+                    <div class="wrap-input1 validate-input" >
+                        {{ form_row(BlogForm.Introduction) }}
+                        <span class="shadow-input1"></span>
+                    </div>
+
+                    <div class="wrap-input1 validate-input" >
+                        {{ form_row(BlogForm.Definition) }}
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        {{ form_row(BlogForm.Signescliniques) }}
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        {{ form_row(BlogForm.Examens) }}
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        {{ form_row(BlogForm.complementaires) }}
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        {{ form_row(BlogForm.Diagnostic) }}
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        {{ form_row(BlogForm.PronosticEvaluation) }}
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        {{ form_row(BlogForm.Priseencharge) }}
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        {{ form_row(BlogForm.Pointscles) }}
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        {{ form_row(BlogForm.Diagnosticdifficile) }}
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        {{ form_row(BlogForm.image) }}
+
+                    </div>
+
+                    <div class="container-contact1-form-btn">
+                        <button type='submit' class="contact1-form-btn">
+						<span>
+							Confirmer
+						</span>
+                        </button>
+                        <a href="{{ path('app_blogs') }}" class="contact1-form-btn"  role="button">Retour</a>
+
+                    </div>
+                {{ form_end(BlogForm) }}
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html.twig' %}
+{% endblock %}

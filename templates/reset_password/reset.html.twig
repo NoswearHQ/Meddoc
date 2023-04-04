@@ -1,0 +1,19 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+<div class="login-page">
+    <div class="form">
+        <img src="{{ asset('front/mainfront/img/Meddoclogo.png')}}" alt="" style="width: 280px">
+        <br>
+        <br>
+        <h5>Réinitialiser votre mot de passe</h5>
+        <br>
+    {{ form_start(resetForm) }}
+        {{ form_row(resetForm.plainPassword) }}
+        <button class="btn btn-primary">Reset password</button>
+    {{ form_end(resetForm) }}
+    </div>
+</div>
+{% endblock %}

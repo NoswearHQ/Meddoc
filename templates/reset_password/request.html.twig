@@ -1,0 +1,31 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+<div class="login-page">
+    <div class="form">
+        {% for flash_error in app.flashes('reset_password_error') %}
+            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+        {% endfor %}
+        <a href="{{ path('app_login') }}"><img src="{{ asset('front/mainfront/img/Meddoclogo.png')}}" alt="" style="width: 280px"></a>
+        <h5>Réinitialiser votre mot de passe</h5>
+
+        {{ form_start(requestForm) }}
+        {{ form_row(requestForm.email) }}
+        <div>
+            <small>
+                Entrez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.             </small>
+        </div>
+        <button class="btn btn-lg btn-primary">Envoyer l'email</button>
+        {{ form_end(requestForm) }}
+    </div>
+</div>
+
+
+
+
+
+
+    {{ form_end(requestForm) }}
+{% endblock %}

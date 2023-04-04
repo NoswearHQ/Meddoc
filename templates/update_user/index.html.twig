@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+<section>
+    <div class="contact1">
+        <div class="container-contact1">
+            <div class="contact1-pic js-tilt" data-tilt>
+                <img src="{{ asset('UsersProfileImgs/' ~ app.user.avatar) }}" alt="IMG">
+            </div>
+                {{ form_start(UserForm) }}
+            <span class="contact1-form-title">
+					Modifier votre compte
+				</span>
+
+            <div class="wrap-input1 validate-input" >
+                {{ form_row(UserForm.email) }}
+                <span class="shadow-input1"></span>
+            </div>
+
+
+
+            <div class="wrap-input1 validate-input" >
+                {{ form_row(UserForm.nom) }}
+                <span class="shadow-input1"></span>
+            </div>
+            <div class="wrap-input1 validate-input" >
+                {{ form_row(UserForm.prenom) }}
+                <span class="shadow-input1"></span>
+            </div>
+            <div class="wrap-input1 validate-input" >
+                {{ form_row(UserForm.avatar) }}
+                <span class="shadow-input1"></span>
+            </div>
+
+
+
+
+
+
+            <br><br>
+            <div class="container-contact1-form-btn">
+                <button type='submit' class="contact1-form-btn">
+						<span>
+							Confirmer
+						</span>
+                </button>
+                <a href="{{ path('app_accueil') }}" class="contact1-form-btn"  role="button">Retour</a>
+
+            </div>
+            {{ form_end(UserForm) }}
+
+        </div>
+    </div>
+</section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% include 'footer.html.twig' %}
+
+{% endblock %}

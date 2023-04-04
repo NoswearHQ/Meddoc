@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogDetailsController!{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+<section class="blog-details spad">
+    <div class="container">
+        <div class="blog__details__hero set-bg" data-setbg="img/blog/details/blog-hero.jpg">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-7 text-center">
+                    <div class="blog__hero__text">
+                        <img  src="{{ asset('blogImgs/')~blog.image}}"  alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-8">
+                <div class="blog__details__text">
+                    <div class="blog__details__text__item">
+                        <h5>Introduction</h5>
+                        <p>{{ blog.introduction}} </p>
+                    </div>
+                    <div class="blog__details__text__item">
+                        <h5>Definition</h5>
+                        <p>{{ blog.definition}} </p>
+                    </div>
+                    <div class="blog__details__text__item">
+                        <h5>Signes cliniques</h5>
+                        <p>{{ blog.signescliniques}} </p>
+                    </div>
+                    <div class="blog__details__text__item">
+                        <h5>Examens</h5>
+                        <p>{{ blog.examens}} </p>
+                    </div>
+                    <div class="blog__details__text__item">
+                        <h5>Complementaires</h5>
+                        <p>{{ blog.complementaires}} </p>
+                    </div>
+                    <div class="blog__details__text__item">
+                        <h5>Diagnostic</h5>
+                        <p>{{ blog.diagnostic}} </p>
+                    </div>
+                    <div class="blog__details__text__item">
+                        <h5>Pronostic Evaluation</h5>
+                        <p>{{ blog.pronosticevaluation}} </p>
+                    </div><div class="blog__details__text__item">
+                        <h5>Prise_en_charge</h5>
+                        <p>{{ blog.priseencharge}} </p>
+                    </div>
+                    <div class="blog__details__text__item">
+                        <h5>Points cles</h5>
+                        <p>{{ blog.Points_cles}} </p>
+                    </div>
+                    <div class="blog__details__text__item">
+                        <h5>Diagnostic difficile</h5>
+                        <p>{{ blog.diagnosticdifficile}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    {% include 'footer.html.twig' %}
+
+{% endblock %}
