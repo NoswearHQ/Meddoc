@@ -26,6 +26,16 @@ class AddBlogController extends AbstractController
         $blog = new Blog();
         $form = $this->createForm(BlogType::class, $blog);
         $form->handleRequest($request);
+        $user=$userRepository->findbyEmail($this->getUser()->getUserIdentifier());
+        if ($user->getHasblog()=="0")
+        {
+            return $this->redirectToRoute('app_blogs');
+        }
+        if ($user->getRoles()=="ROLE_USER")
+        {
+            return $this->redirectToRoute('app_blogs');
+        }
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $photo = $form->get('image')->getData();
@@ -46,7 +56,16 @@ class AddBlogController extends AbstractController
                     // ... handle exception if something happens during file upload
                 }
             }
-            $blog->setImage($newFilename);
+            if ($photo==null)
+            {
+                $blog->setImage('young-handsome-physician-medical-robe-with-stethoscope-64373ac0495bc.jpg');
+            }
+            else
+            {
+                $blog->setImage($newFilename);
+            }
+
+            $blog->setStatus("Accepted");
             $user=$userRepository->findbyEmail($this->getUser()->getUserIdentifier());
             $blog->setDateArticle(date('d-m-y h:i:s'));
             $blog->setIdUser($user->getId());

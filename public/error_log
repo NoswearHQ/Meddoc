@@ -1,0 +1,297 @@
+[04-Apr-2023 13:33:17 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:17 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:19 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:21 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:21 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:34 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:34 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:36 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:36 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:37 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:41 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:41 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:49 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:52 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:33:52 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:34:00 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:34:00 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:34:00 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:34:00 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:34:05 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:34:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:35:22 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:35:22 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:39:05 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:39:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:39:19 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:39:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:45:07 UTC] PHP Warning:  require_once(/home/meddoctn/public_html/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 13:45:07 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/meddoctn/public_html/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/meddoctn/public_html/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/meddoctn/public_html/public/index.php on line 5
+[04-Apr-2023 14:23:22 UTC] PHP Fatal error:  Uncaught PDOException: could not find driver in /home/meddoctn/public_html/vendor/doctrine/dbal/src/Driver/PDO/MySQL/Driver.php:33
+Stack trace:
+#0 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Driver/PDO/MySQL/Driver.php(33): PDO->__construct()
+#1 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(375): Doctrine\DBAL\Driver\PDO\MySQL\Driver->connect()
+#2 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(446): Doctrine\DBAL\Connection->connect()
+#3 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(408): Doctrine\DBAL\Connection->getDatabasePlatformVersion()
+#4 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(316): Doctrine\DBAL\Connection->detectDatabasePlatform()
+#5 /home/meddoctn/public_html/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(766): Doctrine\DBAL\Connection->getDatabasePlatform()
+#6 /home/meddoctn/public_html/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(552): Doctrine\ORM\Mapping\ClassMetadataFactory->getTargetPlatform()
+#7 /home/meddoctn/public_html/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(143): Doctrine\ORM\Mapping\ClassMetadataFactory->completeIdGeneratorMapping()
+#8 /home/meddoctn/public_html/vendor/doctrine/doctrine-bundle/Mapping/ClassMetadataFactory.php(18): Doctrine\ORM\Mapping\ClassMetadataFactory->doLoadMetadata()
+#9 /home/meddoctn/public_html/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\Bundle\DoctrineBundle\Mapping\ClassMetadataFactory->doLoadMetadata()
+#10 /home/meddoctn/public_html/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(207): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->loadMetadata()
+#11 /home/meddoctn/public_html/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(96): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getMetadataFor()
+#12 /home/meddoctn/public_html/vendor/doctrine/doctrine-bundle/CacheWarmer/DoctrineMetadataCacheWarmer.php(48): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#13 /home/meddoctn/public_html/vendor/symfony/framework-bundle/CacheWarmer/AbstractPhpFileCacheWarmer.php(46): Doctrine\Bundle\DoctrineBundle\CacheWarmer\DoctrineMetadataCacheWarmer->doWarmUp()
+#14 /home/meddoctn/public_html/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php(96): Symfony\Bundle\FrameworkBundle\CacheWarmer\AbstractPhpFileCacheWarmer->warmUp()
+#15 /home/meddoctn/public_html/vendor/symfony/http-kernel/Kernel.php(526): Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate->warmUp()
+#16 /home/meddoctn/public_html/vendor/symfony/http-kernel/Kernel.php(709): Symfony\Component\HttpKernel\Kernel->initializeContainer()
+#17 /home/meddoctn/public_html/vendor/symfony/http-kernel/Kernel.php(172): Symfony\Component\HttpKernel\Kernel->preBoot()
+#18 /home/meddoctn/public_html/vendor/symfony/runtime/Runner/Symfony/HttpKernelRunner.php(35): Symfony\Component\HttpKernel\Kernel->handle()
+#19 /home/meddoctn/public_html/vendor/autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\HttpKernelRunner->run()
+#20 /home/meddoctn/public_html/public/index.php(5): require_once('/home/meddoctn/...')
+#21 {main}
+
+Next Doctrine\DBAL\Driver\PDO\Exception: could not find driver in /home/meddoctn/public_html/vendor/doctrine/dbal/src/Driver/PDO/Exception.php:28
+Stack trace:
+#0 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Driver/PDO/MySQL/Driver.php(40): Doctrine\DBAL\Driver\PDO\Exception::new()
+#1 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(375): Doctrine\DBAL\Driver\PDO\MySQL\Driver->connect()
+#2 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(446): Doctrine\DBAL\Connection->connect()
+#3 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(408): Doctrine\DBAL\Connection->getDatabasePlatformVersion()
+#4 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(316): Doctrine\DBAL\Connection->detectDatabasePlatform()
+#5 /home/meddoctn/public_html/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(766): Doctrine\DBAL\Connection->getDatabasePlatform()
+#6 /home/meddoctn/public_html/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(552): Doctrine\ORM\Mapping\ClassMetadataFactory->getTargetPlatform()
+#7 /home/meddoctn/public_html/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(143): Doctrine\ORM\Mapping\ClassMetadataFactory->completeIdGeneratorMapping()
+#8 /home/meddoctn/public_html/vendor/doctrine/doctrine-bundle/Mapping/ClassMetadataFactory.php(18): Doctrine\ORM\Mapping\ClassMetadataFactory->doLoadMetadata()
+#9 /home/meddoctn/public_html/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\Bundle\DoctrineBundle\Mapping\ClassMetadataFactory->doLoadMetadata()
+#10 /home/meddoctn/public_html/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(207): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->loadMetadata()
+#11 /home/meddoctn/public_html/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(96): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getMetadataFor()
+#12 /home/meddoctn/public_html/vendor/doctrine/doctrine-bundle/CacheWarmer/DoctrineMetadataCacheWarmer.php(48): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#13 /home/meddoctn/public_html/vendor/symfony/framework-bundle/CacheWarmer/AbstractPhpFileCacheWarmer.php(46): Doctrine\Bundle\DoctrineBundle\CacheWarmer\DoctrineMetadataCacheWarmer->doWarmUp()
+#14 /home/meddoctn/public_html/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php(96): Symfony\Bundle\FrameworkBundle\CacheWarmer\AbstractPhpFileCacheWarmer->warmUp()
+#15 /home/meddoctn/public_html/vendor/symfony/http-kernel/Kernel.php(526): Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate->warmUp()
+#16 /home/meddoctn/public_html/vendor/symfony/http-kernel/Kernel.php(709): Symfony\Component\HttpKernel\Kernel->initializeContainer()
+#17 /home/meddoctn/public_html/vendor/symfony/http-kernel/Kernel.php(172): Symfony\Component\HttpKernel\Kernel->preBoot()
+#18 /home/meddoctn/public_html/vendor/symfony/runtime/Runner/Symfony/HttpKernelRunner.php(35): Symfony\Component\HttpKernel\Kernel->handle()
+#19 /home/meddoctn/public_html/vendor/autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\HttpKernelRunner->run()
+#20 /home/meddoctn/public_html/public/index.php(5): require_once('/home/meddoctn/...')
+#21 {main}
+
+Next Doctrine\DBAL\Exception\DriverException: An exception occurred in the driver: could not find driver in /home/meddoctn/public_html/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php:117
+Stack trace:
+#0 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(1931): Doctrine\DBAL\Driver\API\MySQL\ExceptionConverter->convert()
+#1 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(1880): Doctrine\DBAL\Connection->handleDriverException()
+#2 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(377): Doctrine\DBAL\Connection->convertException()
+#3 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(446): Doctrine\DBAL\Connection->connect()
+#4 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(408): Doctrine\DBAL\Connection->getDatabasePlatformVersion()
+#5 /home/meddoctn/public_html/vendor/doctrine/dbal/src/Connection.php(316): Doctrine\DBAL\Connection->detectDatabasePlatform()
+#6 /home/meddoctn/public_html/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(766): Doctrine\DBAL\Connection->getDatabasePlatform()
+#7 /home/meddoctn/public_html/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(552): Doctrine\ORM\Mapping\ClassMetadataFactory->getTargetPlatform()
+#8 /home/meddoctn/public_html/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(143): Doctrine\ORM\Mapping\ClassMetadataFactory->completeIdGeneratorMapping()
+#9 /home/meddoctn/public_html/vendor/doctrine/doctrine-bundle/Mapping/ClassMetadataFactory.php(18): Doctrine\ORM\Mapping\ClassMetadataFactory->doLoadMetadata()
+#10 /home/meddoctn/public_html/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\Bundle\DoctrineBundle\Mapping\ClassMetadataFactory->doLoadMetadata()
+#11 /home/meddoctn/public_html/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(207): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->loadMetadata()
+#12 /home/meddoctn/public_html/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(96): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getMetadataFor()
+#13 /home/meddoctn/public_html/vendor/doctrine/doctrine-bundle/CacheWarmer/DoctrineMetadataCacheWarmer.php(48): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#14 /home/meddoctn/public_html/vendor/symfony/framework-bundle/CacheWarmer/AbstractPhpFileCacheWarmer.php(46): Doctrine\Bundle\DoctrineBundle\CacheWarmer\DoctrineMetadataCacheWarmer->doWarmUp()
+#15 /home/meddoctn/public_html/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php(96): Symfony\Bundle\FrameworkBundle\CacheWarmer\AbstractPhpFileCacheWarmer->warmUp()
+#16 /home/meddoctn/public_html/vendor/symfony/http-kernel/Kernel.php(526): Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate->warmUp()
+#17 /home/meddoctn/public_html/vendor/symfony/http-kernel/Kernel.php(709): Symfony\Component\HttpKernel\Kernel->initializeContainer()
+#18 /home/meddoctn/public_html/vendor/symfony/http-kernel/Kernel.php(172): Symfony\Component\HttpKernel\Kernel->preBoot()
+#19 /home/meddoctn/public_html/vendor/symfony/runtime/Runner/Symfony/HttpKernelRunner.php(35): Symfony\Component\HttpKernel\Kernel->handle()
+#20 /home/meddoctn/public_html/vendor/autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\HttpKernelRunner->run()
+#21 /home/meddoctn/public_html/public/index.php(5): require_once('/home/meddoctn/...')
+#22 {main}
+  thrown in /home/meddoctn/public_html/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php on line 117
+[04-Apr-2023 14:32:12 UTC] PHP Fatal error:  Declaration of Symfony\Component\Cache\CacheItem::expiresAt(?DateTimeInterface $expiration): Symfony\Component\ErrorHandler\DebugClassLoader must be compatible with PsrExt\Cache\CacheItemInterface::expiresAt($expiration) in /home/meddoctn/public_html/vendor/symfony/cache/CacheItem.php on line 65
+[04-Apr-2023 14:32:29 UTC] PHP Fatal error:  Declaration of Symfony\Component\Cache\CacheItem::expiresAt(?DateTimeInterface $expiration): Symfony\Component\ErrorHandler\DebugClassLoader must be compatible with PsrExt\Cache\CacheItemInterface::expiresAt($expiration) in /home/meddoctn/public_html/vendor/symfony/cache/CacheItem.php on line 65
+[04-Apr-2023 14:32:39 UTC] PHP Fatal error:  Declaration of Symfony\Component\Cache\CacheItem::expiresAt(?DateTimeInterface $expiration): Symfony\Component\ErrorHandler\DebugClassLoader must be compatible with PsrExt\Cache\CacheItemInterface::expiresAt($expiration) in /home/meddoctn/public_html/vendor/symfony/cache/CacheItem.php on line 65
+[04-Apr-2023 14:37:10 UTC] PHP Fatal error:  Declaration of Symfony\Component\Cache\CacheItem::expiresAt(?DateTimeInterface $expiration): Symfony\Component\ErrorHandler\DebugClassLoader must be compatible with PsrExt\Cache\CacheItemInterface::expiresAt($expiration) in /home/meddoctn/public_html/vendor/symfony/cache/CacheItem.php on line 65
+[04-Apr-2023 14:39:28 UTC] PHP Fatal error:  Declaration of Symfony\Component\Cache\CacheItem::expiresAt(?DateTimeInterface $expiration): Symfony\Component\ErrorHandler\DebugClassLoader must be compatible with PsrExt\Cache\CacheItemInterface::expiresAt($expiration) in /home/meddoctn/public_html/vendor/symfony/cache/CacheItem.php on line 65
+[04-Apr-2023 14:40:14 UTC] PHP Fatal error:  Declaration of Symfony\Component\Cache\CacheItem::expiresAt(?DateTimeInterface $expiration): Symfony\Component\ErrorHandler\DebugClassLoader must be compatible with PsrExt\Cache\CacheItemInterface::expiresAt($expiration) in /home/meddoctn/public_html/vendor/symfony/cache/CacheItem.php on line 65

@@ -13,11 +13,19 @@
                 </div>
                 {{ form_start(BlogForm) }}
                 <span class="contact1-form-title">
-					Modifier un article
+					Modifier une Spécialité
 				</span>
                 {{ form_row(BlogForm.cat) }}
 
                 <br><br>
+                <div class="wrap-input1 validate-input" >
+                    {{ form_row(BlogForm.Pathologie) }}
+                    <span class="shadow-input1"></span>
+                </div>
+                <div class="wrap-input1 validate-input" >
+                    {{ form_row(BlogForm.symptomes) }}
+                    <span class="shadow-input1"></span>
+                </div>
                 <div class="wrap-input1 validate-input" >
                     {{ form_row(BlogForm.Introduction) }}
                     <span class="shadow-input1"></span>

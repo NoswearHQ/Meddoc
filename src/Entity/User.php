@@ -107,6 +107,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
 
+    #[ORM\Column(length: 255)]
+    private ?string $Pays = null;
+
+    #[ORM\Column(length: 255)]
+    public ?string $Ville = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Specialite = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $hasblog = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -192,6 +204,54 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __toString(): string
     {
 return " Nom = ".$this->nom;
+    }
+
+    public function getPays(): ?string
+    {
+        return $this->Pays;
+    }
+
+    public function setPays(string $Pays): self
+    {
+        $this->Pays = $Pays;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->Ville;
+    }
+
+    public function setVille(string $Ville): self
+    {
+        $this->Ville = $Ville;
+
+        return $this;
+    }
+
+    public function getSpecialite(): ?string
+    {
+        return $this->Specialite;
+    }
+
+    public function setSpecialite(string $Specialite): self
+    {
+        $this->Specialite = $Specialite;
+
+        return $this;
+    }
+
+    public function getHasblog(): ?string
+    {
+        return $this->hasblog;
+    }
+
+    public function setHasblog(string $hasblog): self
+    {
+        $this->hasblog = $hasblog;
+
+        return $this;
     }
 
 }

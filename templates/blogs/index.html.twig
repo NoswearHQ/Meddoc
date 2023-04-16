@@ -3,6 +3,7 @@
 {% block body %}
 
     {% include 'header.html.twig' %}
+<style></style>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
@@ -39,7 +40,9 @@
                 <div class="col-lg-12 text-center">
                     <div class="load__more">
                         {% if app.user %}
-                            <a href="{{ path('app_add_blog') }}" class="primary-btn">Ajouter un article</a>
+                        {% if app.user.hasblog=="1" or app.user.roles[0]=="ROLE_ADMIN" %}
+                            <a href="{{ path('app_add_blog') }}" class="primary-btn">Ajouter Pathologie</a>
+                        {% endif %}
                         {% endif %}
                     </div>
                 </div>
@@ -54,7 +57,7 @@
                                             <img  src="{{ asset('blogImgs/' ~ d.blog.image) }}" style="height:400px;max-width:200px;" alt="">
                                         </div>
                                         <div class="blog__item__text">
-                                            <h5><a href="#">{{ d.blog.introduction }}</a></h5>
+                                            <h5><a href="#">{{ d.blog.Pathologie }}</a></h5>
                                             <ul>
                                                 <li><img src="{{ asset('UsersProfileImgs/' ~ d.user.avatar) }}" alt="">{{d.user.nom}}&nbsp;{{d.user.prenom}}</li>
                                                 <li>{{ d.blog.datearticle }}</li>
@@ -62,7 +65,7 @@
                                             <br>
                                             <a href="{{ path('app_blog_details',{'id':d.blog.id})}}" class="primary-btn"><i class="fa fa-info-circle" aria-hidden="true"></i>Voir plus</a>
                                             {% if app.user %}
-                                                {% if app.user.id== d.user.id  %}
+                                                {% if app.user.id== d.user.id or app.user.roles[0]=="ROLE_ROOT"   %}
                                                     <a href="{{ path('app_update_blog',{'id':d.blog.id})}}" class="primary-btn" ><i  class="fa fa-gear"></i>Modifier</a>
                                                     <a href="{{ path('app_delete_blog',{'id':d.blog.id})}}" class="primary-btn" style="color:red"><i class="fa fa-trash-o" ></i>Supprimer</a>
                                                 {% endif %}
@@ -834,6 +837,7 @@
                         </div>
                     </section>
                 </div>
+
            </div>
         </div>
     </div>

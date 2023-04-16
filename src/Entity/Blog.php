@@ -55,6 +55,15 @@ class Blog
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $id_user = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $status = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Pathologie = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $symptomes = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -224,6 +233,42 @@ class Blog
     public function setIdUser(?string $id_user): self
     {
         $this->id_user = $id_user;
+
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): self
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    public function getPathologie(): ?string
+    {
+        return $this->Pathologie;
+    }
+
+    public function setPathologie(string $Pathologie): self
+    {
+        $this->Pathologie = $Pathologie;
+
+        return $this;
+    }
+
+    public function getSymptomes(): ?string
+    {
+        return $this->symptomes;
+    }
+
+    public function setSymptomes(string $symptomes): self
+    {
+        $this->symptomes = $symptomes;
 
         return $this;
     }

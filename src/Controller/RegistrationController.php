@@ -68,6 +68,10 @@ class RegistrationController extends AbstractController
                 // instead of its contents
                 $user->setAvatar($newFilename);
             }
+            else
+            {
+                $user->setAvatar("Doc.jpg");
+            }
             $user->setDateCreation(date('d-m-y h:i:s'));
 
             $entityManager->persist($user);
@@ -76,7 +80,7 @@ class RegistrationController extends AbstractController
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
                 (new TemplatedEmail())
-                    ->from(new Address('contactmedical.blog@gmail.com', 'Contact Medical Blog'))
+                    ->from(new Address('contactmeddoc@meddoc.tn', 'Contact Medical Blog'))
                     ->to($user->getEmail())
                     ->subject('Please Confirm your Email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')

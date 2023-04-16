@@ -45,6 +45,14 @@ class BlogRepository extends ServiceEntityRepository
     {
         return $this->findOneBy(['id' => $id]);
     }
+    public function findBystatusPending(): array
+    {
+        return $this->findBy(['status' => "Pending"]);
+    }
+    public function findBystatusAccepted(): array
+    {
+        return $this->findBy(['status' => "Accepted"]);
+    }
 
 
    public function paginationQuery()

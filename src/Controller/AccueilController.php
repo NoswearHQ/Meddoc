@@ -15,6 +15,13 @@ class AccueilController extends AbstractController
     {
         $Docteur=$userRepository->findAll();
         $Docteurs = array();
+        for ($i = 0; $i < sizeof($Docteur); $i++)
+        {
+            if ($Docteur[$i]->getRoles()[0]=="ROLE_ROOT")
+            {
+                unset($Docteur[$i]);
+            }
+        }
         if (sizeof($Docteur)>3)
         {
             for ($i = 0; $i < 3; $i++) {
@@ -30,8 +37,7 @@ class AccueilController extends AbstractController
             $Docteurs=$Docteur;
         }
 
-
-
+    
         return $this->render('accueil/index.html.twig', [
             'controller_name' => 'AccueilController',
             'Docteurs'=>$Docteurs

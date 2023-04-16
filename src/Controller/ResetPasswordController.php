@@ -157,7 +157,7 @@ class ResetPasswordController extends AbstractController
         }
 
         $email = (new TemplatedEmail())
-            ->from(new Address('contactmedical.blog@gmail.com', 'Meddoc Récupérer votre mot de passe'))
+            ->from(new Address('contactmeddoc@meddoc.tn', 'Meddoc Récupérer votre mot de passe'))
             ->to($user->getEmail())
             ->subject('Your password reset request')
             ->htmlTemplate('reset_password/email.html.twig')

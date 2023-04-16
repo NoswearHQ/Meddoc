@@ -4,23 +4,57 @@
 
 {% block body %}
     {% include 'header.html.twig' %}
-
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
     <section>
+        {{ form_start(BlogForm) }}
         <div class="contact1">
+            <div class="container-contact1">
+                <div class="row">
+                    <div class="col">
+                        <div class="wrap-input1 validate-input" >
+                            <h6>Ajouter une Pathologies</h6>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="wrap-input1 validate-input" >
+                            {{ form_row(BlogForm.Pathologie) }}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="wrap-input1 validate-input" >
+                            {{ form_row(BlogForm.symptomes) }}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type='submit' class="contact1-form-btn" id="btn2" ><span>Confirmer</span></button>
+                    </div>
+                    <div class="col">
+                        <a href="{{ path('app_blogs') }}" class="contact1-form-btn" id="btn1"  role="button">Retour</a>
+                    </div>
+                    <div class="col">
+                        <a  id="show-more-button" class="contact1-form-btn"><span>Ajouter plus </span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact1" style="display:none;">
             <div class="container-contact1">
                 <div class="contact1-pic js-tilt" data-tilt>
                     <img src="{{ asset('front/mainfront/img/logoArticle.png')}}" alt="IMG">
                 </div>
-                {{ form_start(BlogForm) }}
-				<span class="contact1-form-title">
-					Ajouter un article
-				</span>
-                {{ form_row(BlogForm.cat) }}
 
+                <span style="font-size: 15px" >  <span style="color: red" >Nb :</span> toutes Les champs sont facultatifs.</span>
+                {{ form_row(BlogForm.cat) }}
                     <br><br>
                     <div class="wrap-input1 validate-input" >
                         {{ form_row(BlogForm.Introduction) }}
-                        <span class="shadow-input1"></span>
                     </div>
 
                     <div class="wrap-input1 validate-input" >
@@ -65,11 +99,7 @@
                     </div>
 
                     <div class="container-contact1-form-btn">
-                        <button type='submit' class="contact1-form-btn">
-						<span>
-							Confirmer
-						</span>
-                        </button>
+                        <button type='submit' class="contact1-form-btn"><span>Confirmer</span></button>
                         <a href="{{ path('app_blogs') }}" class="contact1-form-btn"  role="button">Retour</a>
 
                     </div>
@@ -77,6 +107,14 @@
             </div>
         </div>
     </section>
-
+    <script>
+        $(document).ready(function() {
+            $('#show-more-button').click(function() {
+                $('.contact1').show(); // Show the hidden contact1 div
+                $('#btn1').hide();
+                $('#btn2').hide();
+            });
+        });
+    </script>
     {% include 'footer.html.twig' %}
 {% endblock %}

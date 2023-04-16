@@ -6,7 +6,14 @@
 
 
     {% include 'header.html.twig' %}
-<section class="team spad">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div class="col-lg-12 text-center">
+        <button class="primary-btn" onclick="showTab('tab1')">Booster les utilisateur</button>
+        <button class="primary-btn" onclick="showTab('tab2')">Donner les autorisations</button>
+    </div>
+
+    <div id="tab1" class="tab-content">
+    <section class="team spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -24,11 +31,11 @@
                     <div class="team__item">
                         <img  src="{{ asset('UsersProfileImgs/'~Doc.avatar)}}"alt="">
                         <h5>Dr.{{ Doc.nom }}&nbsp;{{ Doc.prenom }}</h5>
-                        {% if app.user.roles[0]=="ROLE_ADMIN" and Doc.roles[0]=="ROLE_USER" %}
+                        {% if app.user.roles[0]=="ROLE_ADMIN" and Doc.roles[0]=="ROLE_USER"  %}
                             <a href={{ path('app_boost',{'id':Doc.id})}} class="primary-btn">Booster à l'administration</a>
-                            {% elseif app.user.roles[0]=="ROLE_ROOT" and Doc.roles[0]=="ROLE_USER"   %}
+                            {% elseif app.user.roles[0]=="ROLE_ROOT" and Doc.roles[0]=="ROLE_USER"    %}
                                 <a href={{ path('app_boost',{'id':Doc.id})}} class="primary-btn">Booster à l'administration</a>
-                            {% elseif app.user.roles[0]=="ROLE_ROOT" and Doc.roles[0]=="ROLE_ADMIN"   %}
+                            {% elseif app.user.roles[0]=="ROLE_ROOT" and Doc.roles[0]=="ROLE_ADMIN"    %}
                                 <a href={{ path('app_demote',{'id':Doc.id})}} class="primary-btn">Rétrograder en utilisateur</a>
                         {% endif %}
 
@@ -41,6 +48,61 @@
 
     </div>
 </section>
+    </div>
+
+    <div id="tab2" class="tab-content" style="display:none">
+        <section class="team spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="section-title">
+                            {% if app.user %}
+                                <h2>Autorisations</h2>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for Doc in Docteurs %}
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="team__item">
+                                <img  src="{{ asset('UsersProfileImgs/'~Doc.avatar)}}"alt="">
+                                <h5>Dr.{{ Doc.nom }}&nbsp;{{ Doc.prenom }}</h5>
+                                {% if app.user.roles[0]=="ROLE_ADMIN" and Doc.roles[0]=="ROLE_USER" and Doc.hasblog==0   %}
+                                        <a href={{ path('app_boostusertoblog',{'id':Doc.id})}} class="primary-btn">Autoriser l'ajout d'articles</a>
+
+                                {% elseif app.user.roles[0]=="ROLE_ROOT" and Doc.roles[0]=="ROLE_USER" and Doc.hasblog==0   %}
+                                    <a href={{ path('app_boostusertoblog',{'id':Doc.id})}} class="primary-btn">Autoriser l'ajout d'articles</a>
+
+                                {% elseif app.user.roles[0]=="ROLE_ROOT" and Doc.roles[0]=="ROLE_ADMIN" and Doc.hasblog==0   %}
+                                    <a href={{ path('app_boostusertoblog',{'id':Doc.id})}} class="primary-btn">Autoriser l'ajout d'articles</a>
+
+                                {% elseif app.user.roles[0]=="ROLE_ROOT" and Doc.roles[0]=="ROLE_ADMIN" and Doc.hasblog==1%}
+                                        <a href={{ path('app_demoteusertoblog',{'id':Doc.id})}} class="primary-btn">Désactiver l'option d'ajout d'articles </a>
+
+                                {% elseif app.user.roles[0]=="ROLE_ROOT" and Doc.roles[0]=="ROLE_USER" and Doc.hasblog==1 %}
+                                        <a href={{ path('app_demoteusertoblog',{'id':Doc.id})}} class="primary-btn">Désactiver l'option d'ajout d'articles </a>
+
+                                {% endif %}
+
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        function showTab(tabName) {
+            var i;
+            var tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+    </script>
     {% include 'footer.html.twig' %}
 {% endblock %}
 

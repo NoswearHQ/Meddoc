@@ -73,11 +73,13 @@ class UpdateBlogController extends AbstractController
 
         if ($usernotallowed->getId()-$userallowed->getId()<>0)
         {
+            if($usernotallowed->getRoles()[0]=="ROLE_ROOT")
+            {
+                $manager->remove($blog);
+                $manager->flush();
+            }
             return $this->redirectToRoute('app_blogs');
         }
-        else
-        $manager->remove($blog);
-        $manager->flush();
         return $this->redirectToRoute('app_blogs');
     }
 }

@@ -61,22 +61,21 @@
         <div class="row">
             <div class="col-lg-2">
                 <div class="header__logo">
-                    <a href="{{path('app_accueil') }}"><img src="{{ asset('front/mainfront/img/Meddoclogo.png')}}" alt=""></a>
+                    <a  href="{{path('app_accueil') }}"><img style="height:  40px" src="{{ asset('front/mainfront/img/Meddoclogo.png')}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-10">
                 <div class="header__menu__option">
                     <nav class="header__menu">
                         <ul>
-                            <li ><a href="{{path('app_accueil') }}">Accueil</a></li>
-                            <li><a href="{{path('app_blogs') }}">Articles</a>
+                            <li ><a style="font-size: 14px" href="{{path('app_accueil') }}">Accueil</a></li>
+                            <li><a style="font-size: 14px" href="{{path('app_blogs') }}">Spécialités</a>
                                 {% if app.user %}
                             {% if app.user.roles[0]=="ROLE_ADMIN" or  app.user.roles[0]=="ROLE_ROOT" %}
+                            <li><a style="font-size: 14px"href="{{path('app_user_manager') }}">Gerer les utilisateurs</a>
 
-                            <li><a href="{{path('app_user_manager') }}">Gerer les utilisateur</a>
                             {% endif %}
                             {% endif %}
-
                             </li>
                         </ul>
                     </nav>

@@ -1,0 +1,158 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+    <style>
+        .button-success,
+        .button-error,
+        .button-warning,
+        .button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            font-size: 15px;
+        }
+        .button-secondary {
+            background: rgb(66, 184, 221);
+            /* this is a light blue */
+        }
+        .button-success {
+            background: rgb(28, 184, 65);
+            /* this is a green */
+        }
+
+        .button-error {
+            background: rgb(202, 60, 60);
+            /* this is a maroon */
+        }
+        .button-warning {
+            background: #cd9900
+            /* this is an orange */
+        }
+    </style>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <section class="blog spad">
+    <div class="container">
+    <div class="row">
+        {% for post in posts %}
+    <div class="col-lg-5 col-md-6 col-sm-6">
+        <div class="blog__item">
+            <div class="blog__item__pic">
+                <img src="{{ asset('blogImgs/' ~ post.blog.image) }}" alt="">
+            </div>
+            <div class="blog__item__text">
+                <h5><a href="#">{{ post.blog.introduction }}</a></h5>
+                <ul>
+                    <li><img src="{{ asset('UsersProfileImgs/' ~ post.user.avatar) }}" alt=""> {{ post.user.nom }}&nbsp;{{ post.user.prenom }}</li>
+                    <li>{{ post.blog.datearticle }}</li>
+
+                </ul>
+                <br>
+                <ul>
+                    <li><a class="button-success pure-button" href="{{ path('app_approuvepost',{'id':post.blog.id})}}">Approuver</a></li>
+                    <li><a class="button-warning pure-button" id="voir-article-{{ post.blog.id }}" style="color: white" >Voir l'article</a></li>
+                    <li><a href="{{ path('app_cancelpost',{'id':post.blog.id})}}" class="button-error pure-button" >Désapprouver</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+        <div id="popup-container" style="display: none;"></div>
+
+    </div>
+    </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script>
+        $(document).ready(function() {
+            {% for post in posts %}
+            $("#voir-article-{{ post.blog.id }}").click(function() {
+                var popupContent = `
+                    <div class="container">
+                    <div class="blog__details__hero set-bg" data-setbg="img/blog/details/blog-hero.jpg">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-lg-4 text-center">
+                                <div class="blog__hero__text">
+                                    <img  src="{{ asset('blogImgs/')~post.blog.image}}"  alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="blog__details__text">
+                                <div class="blog__details__text__item">
+                                    <h5>Introduction</h5>
+                                    <p>{{ post.blog.introduction}} </p>
+                                </div>
+                                <div class="blog__details__text__item">
+                                    <h5>Definition</h5>
+                                    <p>{{ post.blog.definition}} </p>
+                                </div>
+                                <div class="blog__details__text__item">
+                                    <h5>Signes cliniques</h5>
+                                    <p>{{ post.blog.signescliniques}} </p>
+                                </div>
+                                <div class="blog__details__text__item">
+                                    <h5>Examens</h5>
+                                    <p>{{ post.blog.examens}} </p>
+                                </div>
+                                <div class="blog__details__text__item">
+                                    <h5>Complementaires</h5>
+                                    <p>{{ post.blog.complementaires}} </p>
+                                </div>
+                                <div class="blog__details__text__item">
+                                    <h5>Diagnostic</h5>
+                                    <p>{{ post.blog.diagnostic}} </p>
+                                </div>
+                                <div class="blog__details__text__item">
+                                    <h5>Pronostic Evaluation</h5>
+                                    <p>{{ post.blog.pronosticevaluation}} </p>
+                                </div><div class="blog__details__text__item">
+                                    <h5>Prise_en_charge</h5>
+                                    <p>{{ post.blog.priseencharge}} </p>
+                                </div>
+                                <div class="blog__details__text__item">
+                                    <h5>Points cles</h5>
+                                    <p>{{ post.blog.Points_cles}} </p>
+                                </div>
+                                <div class="blog__details__text__item">
+                                    <h5>Diagnostic différentiel</h5>
+                                    <p>{{ post.blog.diagnosticdifficile}} </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+                $("#popup-container").html(popupContent);
+                $("#popup-container").dialog({
+                    modal: true,
+                    width: "80%",
+                    height: "auto",
+                    buttons: {
+                        "Fermer": function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+            });
+            {% endfor %}
+        });
+    </script>
+<br>
+    <br><br><br><br><br><br>
+
+    {% include 'footer.html.twig' %}
+{% endblock %}

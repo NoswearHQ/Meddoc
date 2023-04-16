@@ -17,7 +17,7 @@ class BlogsController extends AbstractController
     #[Route('/blogs', name: 'app_blogs')]
     public function index(BlogRepository $blogRepository,UserRepository $userRepository,PaginatorInterface $paginator,Request $request): Response
     {
-    $Blog=$blogRepository->findAll();
+    $Blog=$blogRepository->findBystatusAccepted();
         $criteria = $request->query->get('cat');
 
         $length = count($Blog);

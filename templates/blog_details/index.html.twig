@@ -18,45 +18,78 @@
         <div class="row d-flex justify-content-center">
             <div class="col-lg-8">
                 <div class="blog__details__text">
+                    {% if blog.Pathologie!=null %}
+                        <div class="blog__details__text__item">
+                            <h5>Pathologie</h5>
+                            <p>{{ blog.Pathologie}} </p>
+                        </div>
+                    {% endif %}
+                    {% if blog.symptomes!=null %}
+                        <div class="blog__details__text__item">
+                            <h5>Symptomes</h5>
+                            <p>{{ blog.symptomes}} </p>
+                        </div>
+                    {% endif %}
+                    {% if blog.introduction!=null %}
                     <div class="blog__details__text__item">
                         <h5>Introduction</h5>
                         <p>{{ blog.introduction}} </p>
                     </div>
+                    {% endif %}
+                    {% if blog.definition!=null %}
                     <div class="blog__details__text__item">
                         <h5>Definition</h5>
                         <p>{{ blog.definition}} </p>
                     </div>
+                    {% endif %}
+                    {% if blog.signescliniques!=null %}
                     <div class="blog__details__text__item">
                         <h5>Signes cliniques</h5>
                         <p>{{ blog.signescliniques}} </p>
                     </div>
+                    {% endif %}
+                    {% if blog.examens!=null %}
                     <div class="blog__details__text__item">
                         <h5>Examens</h5>
                         <p>{{ blog.examens}} </p>
                     </div>
+                    {% endif %}
+                    {% if blog.complementaires!=null %}
                     <div class="blog__details__text__item">
                         <h5>Complementaires</h5>
                         <p>{{ blog.complementaires}} </p>
                     </div>
+                    {% endif %}
+                    {% if blog.diagnostic!=null %}
                     <div class="blog__details__text__item">
                         <h5>Diagnostic</h5>
                         <p>{{ blog.diagnostic}} </p>
                     </div>
+                    {% endif %}
+                    {% if blog.pronosticevaluation!=null %}
                     <div class="blog__details__text__item">
                         <h5>Pronostic Evaluation</h5>
                         <p>{{ blog.pronosticevaluation}} </p>
-                    </div><div class="blog__details__text__item">
+                    </div>
+                    {% endif %}
+                    {% if blog.priseencharge!=null %}
+                    <div class="blog__details__text__item">
                         <h5>Prise_en_charge</h5>
                         <p>{{ blog.priseencharge}} </p>
                     </div>
+                    {% endif %}
+                    {% if blog.Points_cles!=null %}
                     <div class="blog__details__text__item">
                         <h5>Points cles</h5>
                         <p>{{ blog.Points_cles}} </p>
                     </div>
+                    {% endif %}
+                    {% if blog.diagnosticdifficile!=null %}
                     <div class="blog__details__text__item">
-                        <h5>Diagnostic difficile</h5>
+                        <h5>Diagnostic différentiel</h5>
                         <p>{{ blog.diagnosticdifficile}} </p>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
